@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:ital,wght@1,300&family=Outfit:wght@100&family=Raleway:wght@200;400&family=Reem+Kufi&family=Roboto:wght@100;300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">PDV</a>
+        <button style="border: none;padding: 10px;width: 200px;" onclick="tela('page1');">Home</button>
+        <button style="border: none;padding: 10px;width: 200px;" onclick="tela('page2');">Cadastrar Produtos</button>
+        <button style="border: none;padding: 10px;width: 200px;" onclick="tela('page3');">Deletar Produtos</button>
+        <div class="menu"><ul><li style="font-size:20px;">Pedido &nbsp  <span id="car1"></span></li></ul></div>
+    </header>
+
+    <div id="page1" class="Menu">
+        <section class="home">
+            <div class="home-row1">
+                <div class="flexbox" id="products"></div>
+            </div>
+            <div class="home-row2">
+                <table class="table">
+                    <tbody id="carrinho">
+                        <tr>
+                            <th  style="font-size:30px;" colspan="4">Total <span id="car2"> </span> 
+                                <button onclick="Finalizar()" class="Finalizar">Finalizar Pedido</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div id="page3" class="Menu">
+        <section class="home">
+            <div class="home-row1">
+                <div class="flexbox" id="products"></div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page2" class="Menu">
+        <h1>Pagina Home 2</h1>
+
+        <div style="margin: 10px;">
+            <div>
+                Cadastrar Produtos
+            </div>
+            <div style="margin:10px;">
+                <input style="padding: 10px;" placeholder="Produto: " id="cadastrarprodutotext" type="text">
+            </div>
+            <div style="margin:10px;">
+                <input style="padding: 10px;" placeholder="Categoria: " id="cadastrarcategoriatext" type="text">
+            </div>
+            <div style="margin:10px;">
+                <input style="padding: 10px;" placeholder="Valor: " id="cadastrarvalortext" type="text">
+            </div>
+            <div style="margin:10px;">
+                <input style="padding: 10px;" placeholder="Metrica: " id="cadastrarmetricatext" type="text">
+            </div>
+            <div style="margin:10px;">
+                <input type="file" id="img-convert" onchange="Convert();">
+                <input style="padding: 10px;" id="base64" type="hidden">
+                <img style="width: 100px;height: 100px;object-fit: cover;" id="base64img">
+            </div>
+            <div style="margin:10px;">
+                <button onclick="CadastrarProduto()" style="padding: 10px;">Cadastrar Produto</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ProdutosAPI.js"></script>
+    <script src="CadastrarProdutos.js"></script>
+    <script src="App.js"></script>
+    <script src="Script.js"></script>
+</body>
+</html>
